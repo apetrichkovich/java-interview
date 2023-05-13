@@ -93,7 +93,8 @@
         "map.computeIfPresent(\"a\", (k, v) -> k.concat(v));\n" +
         "map.computeIfAbsent(\"a\", k -> \"A\".concat(k)); //[\"a\",\"Aa\"]\n" +
         "map.getOrDefault(\"a\", \"not found\");\n" +
-        "map.merge(\"a\", \"z\", (value, newValue) -> value.concat(newValue)); //[\"a\",\"Aaz\"]'>map methods</abbr>.",
+        "map.merge(\"a\", \"z\", (value, newValue) -> value.concat(newValue)); //[\"a\",\"Aaz\"]'>map methods</abbr>, <abbr title='JavaScript engine.'>Nashorn</abbr>, <abbr title='String b64 = Base64.getEncoder().encodeToString(\"input\".getBytes(\"utf-8\"));\n" +
+        "new String(Base64.getDecoder().decode(\"aW5wdXQ==\"), \"utf-8\");'>Base64</abbr>.",
 
         "<b>Transaction isolation levels:</b> Read uncommitted, Read committed, Repeatable reads, Serializable.",
         "<b>LOCK TABLE</b> users IN M MODE, where M can be ACCESS SHARE, ROW SHARE, ROW EXCLUSIVE, SHARE UPDATE EXCLUSIVE, SHARE, SHARE ROW EXCLUSIVE, EXCLUSIVE, ACCESS EXCLUSIVE",
