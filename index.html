@@ -70,7 +70,23 @@
         "void method() {\n" +
         "\tILambda op = String::length;\n" +
         "\tint result = op.length(\"hello\");\n" +
-        "}'>method reference</abbr>",
+        "}'>method reference</abbr>, <abbr title='Function<T, R>, DoubleFunction<R>, IntFunction<R>, LongFunction<R>\n" +
+        "Function<String, Integer> toInteger = Integer::valueOf;\n\n" +
+        "UnaryOperator<T>, DoubleUnaryOperator, IntUnaryOperator, LongUnaryOperator\n" +
+        "UnaryOperator<Integer> operator = x -> x * x;\n\n" +
+        "BinaryOperator<T>, DoubleBinaryOperator, IntBinaryOperator, LongBinaryOperator\n" +
+        "BinaryOperator<Integer> operator = (a, b) -> a + b;\n\n" +
+        "Predicate<T>, DoublePredicate, IntPredicate, LongPredicate\n" +
+        "Predicate<String> predicate = (s) -> s.length() > 0;\n\n" +
+        "Consumer<T>, DoubleConsumer, IntConsumer, LongConsumer\n" +
+        "Consumer<String> hello = (name) -> System.out.println(\"Hello, \" + name);\n\n" +
+        "Supplier<T>, DoubleSupplier, IntSupplier, LongSupplier\n" +
+        "Supplier<LocalDateTime> now = LocalDateTime::now;\n\n" +
+        "BiConsumer<T,U>, BiFunction<T,U,R>, BiPredicate<T,U>, DoubleToIntFunction, DoubleToLongFunction, IntToDoubleFunction, IntToLongFunction, LongToDoubleFunction, LongToIntFunction\n" +
+        "ToDoubleBiFunction<T,U>, ToLongBiFunction<T,U>, ToIntBiFunction<T,U>,\n" +
+        "ToDoubleFunction<T>, ToLongFunction<T>, ToIntFunction<T>\n" +
+        "ObjDoubleConsumer<T>, ObjLongConsumer<T>, ObjIntConsumer<T>\n" +
+        "'>functional interfaces</abbr>, <abbr title='collection.parallelStream(), filter(), skip(), distinct(), limit(), map(), reduce(), sorted(), collect(), count(), min(), max(), flatMap(), findFirst(), findAny(), anyMatch(), noneMatch(), allMatch(), forEach(), forEachOrdered(), toArray(), peek(); sum(), average() for stream of numbers.'>streams</abbr>.",
 
         "<b>Transaction isolation levels:</b> Read uncommitted, Read committed, Repeatable reads, Serializable.",
         "<b>LOCK TABLE</b> users IN M MODE, where M can be ACCESS SHARE, ROW SHARE, ROW EXCLUSIVE, SHARE UPDATE EXCLUSIVE, SHARE, SHARE ROW EXCLUSIVE, EXCLUSIVE, ACCESS EXCLUSIVE",
