@@ -4,6 +4,9 @@
   <title>Java Interview</title>
   <meta charset="UTF-8">
   <style>
+    body {
+      margin: 0;
+    }
     #blocks {
       min-height: 480px;
       column-count: 5;
@@ -45,6 +48,9 @@
         "<b>Сloning:</b> implements Cloneable + override clone() {super.clone()}; constructor (recommended), static factory method, bytes serialization/deserialization.",
         "<b>Exceptions. Throwable => Exception and Error (not recommended to catch). Checked and unchecked</b> (Error, RuntimeException; ArithmeticException, ClassCastException, ConcurrentModificationException, IllegalArgumentException, IllegalStateException, IndexOutOfBoundsException, NoSuchElementException, NullPointerException, UnsupportedOperationException).",
         "<b>Generics</b> allow \"a type or method to operate on objects of various types\" and check types at compile time. List&lt;T&gt;, List&lt;String&gt;.",
+
+        "<b>Collection</b> (<b>List:</b> ArrayList, LinkedList, Vector, Stack; <b>Set:</b> HashSet, LinkedHashSet, <abbr title='Ordered elements in set.'>TreeSet</abbr>; <b>Queue:</b> PriorityQueue, ArrayDeque).",
+        "<b>Map:</b> Hashtable, HashMap, LinkedHashMap, <abbr title='Ordered elements in map.'>TreeMap</abbr>, WeakHashMap.",
 
         "<b>Transaction isolation levels:</b> Read uncommitted, Read committed, Repeatable reads, Serializable.",
         "<b>LOCK TABLE</b> users IN M MODE, where M can be ACCESS SHARE, ROW SHARE, ROW EXCLUSIVE, SHARE UPDATE EXCLUSIVE, SHARE, SHARE ROW EXCLUSIVE, EXCLUSIVE, ACCESS EXCLUSIVE",
