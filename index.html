@@ -63,7 +63,14 @@
         "void method() {\n" +
         "\tILambda op = (x, y) -> 2 * x + y;\n" +
         "\tint result = op.calc(10, 20);\n" +
-        "}'>Lambda-expressions</abbr>, ",
+        "}'>Lambda-expressions</abbr>, <abbr title='interface ILambda {\n" +
+        "\tint length(String s);\n" +
+        "}\n" +
+        "\n" +
+        "void method() {\n" +
+        "\tILambda op = String::length;\n" +
+        "\tint result = op.length(\"hello\");\n" +
+        "}'>method refference</abbr>",
 
         "<b>Transaction isolation levels:</b> Read uncommitted, Read committed, Repeatable reads, Serializable.",
         "<b>LOCK TABLE</b> users IN M MODE, where M can be ACCESS SHARE, ROW SHARE, ROW EXCLUSIVE, SHARE UPDATE EXCLUSIVE, SHARE, SHARE ROW EXCLUSIVE, EXCLUSIVE, ACCESS EXCLUSIVE",
