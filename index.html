@@ -7,6 +7,7 @@
     #blocks {
       min-height: 480px;
       column-count: 5;
+      column-gap: 1px;
       font-size: 20px;
       font-family: sans-serif;
       word-wrap: break-word;
@@ -16,10 +17,10 @@
       margin: 0;
     }
     #blocks p:nth-child(odd) {
-      background: aliceblue;
+      background: lightcoral;
     }
     #blocks p:nth-child(even) {
-      background: bisque;
+      background: lightblue;
     }
   </style>
 </head>
@@ -59,6 +60,37 @@
         "<b>Algorithms with time complexities:</b><br> Linear Search - O(n), Binary Search - O(log&nbsp;n);<br> Bubble Sort - O(n<sup>2</sup>), Insertion Sort - O(n<sup>2</sup>), Quick Sort - O(n&nbsp;log&nbsp;n), Merge Sort - O(n&nbsp;log&nbsp;n), Selection Sort - O(n<sup>2</sup>).",
         "<b>Logical operators:</b> &, &&, |, ||, <abbr title='Exclusive OR.'>^</abbr>, !, ==, !=, <abbr title='Ternary operator.'>(?:)</abbr>, &=, |=, ^=",
         "<b>Bit operations:</b> ~, &, |, ^, <<, >>, >>>, &=, |=, ^=, <<=, >>=, >>>=",
+        "<b>Kubernetes/K8s:</b> build docker image, deployment to start pods: kubectl apply -f <abbr title='apiVersion: apps/v1\n" +
+        "kind: Deployment\n" +
+        "metadata:\n" +
+        "  name: app\n" +
+        "spec:\n" +
+        "  replicas: 1\n" +
+        "  selector:\n" +
+        "    matchLabels:\n" +
+        "      app: app\n" +
+        "  template:\n" +
+        "    metadata:\n" +
+        "      labels:\n" +
+        "        app: app\n" +
+        "    spec:\n" +
+        "      containers:\n" +
+        "      - name: java\n" +
+        "        image: app\n" +
+        "        imagePullPolicy: Never\n" +
+        "        ports:\n" +
+        "        - containerPort: 80\n'>app-deployment.yaml</abbr>, service to share app: kubectl apply -f <abbr title='apiVersion: v1\n" +
+        "kind: Service\n" +
+        "metadata:\n" +
+        " name: app-nodeport\n" +
+        "spec:\n" +
+        " type: NodePort [ClusterIP (default), LoadBalancer, ExternalName]\n" +
+        " ports:\n" +
+        " - port: 80\n" +
+        "   targetPort: 80\n" +
+        "   nodePort: 30123\n" +
+        " selector:\n" +
+        "   app: app\n'>app-service.yaml</abbr>",
 
     ];
     const blocks = document.getElementById("blocks");
