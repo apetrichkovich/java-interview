@@ -25,10 +25,18 @@
     #blocks p:nth-child(even) {
       background: lightblue;
     }
+    .tooltip-inner {
+      text-align: left !important;
+      min-width: 320px;
+    }
   </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
   <div id="blocks"></div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script>
     const questions = [
         "<b>OOP</b> - programming methodology based on the idea that program is set of objects, each of them is instance of some class and there is classes hierarchy.",
@@ -57,44 +65,44 @@
         "<b>Concurrent Collections:</b> ConcurrentHashMap, CopyOnWriteArrayList, synchronized/locked block, Collections.synchronizedMap(new HashMap()), Collections.synchronizedList(new ArrayList()).",
         "<b>Collections only for read:</b> Collections.unmodifiableList(list);<br> Collections.unmodifiableSet(set);<br> Collections.unmodifiableMap(map).",
 
-        "<b>Java 8.</b><br> <abbr title='interface ILambda {\n" +
-        "\tint calc(int x, int y);\n" +
-        "}\n" +
-        "\n" +
-        "void method() {\n" +
-        "\tILambda op = (x, y) -> 2 * x + y;\n" +
-        "\tint result = op.calc(10, 20);\n" +
-        "}'>Lambda-expressions</abbr>, <abbr title='interface ILambda {\n" +
-        "\tint length(String s);\n" +
-        "}\n" +
-        "\n" +
-        "void method() {\n" +
-        "\tILambda op = String::length;\n" +
-        "\tint result = op.length(\"hello\");\n" +
-        "}'>method reference</abbr>, <abbr title='Function<T, R>, DoubleFunction<R>, IntFunction<R>, LongFunction<R>\n" +
-        "Function<String, Integer> toInteger = Integer::valueOf;\n\n" +
-        "UnaryOperator<T>, DoubleUnaryOperator, IntUnaryOperator, LongUnaryOperator\n" +
-        "UnaryOperator<Integer> operator = x -> x * x;\n\n" +
-        "BinaryOperator<T>, DoubleBinaryOperator, IntBinaryOperator, LongBinaryOperator\n" +
-        "BinaryOperator<Integer> operator = (a, b) -> a + b;\n\n" +
-        "Predicate<T>, DoublePredicate, IntPredicate, LongPredicate\n" +
-        "Predicate<String> predicate = (s) -> s.length() > 0;\n\n" +
-        "Consumer<T>, DoubleConsumer, IntConsumer, LongConsumer\n" +
-        "Consumer<String> hello = (name) -> System.out.println(\"Hello, \" + name);\n\n" +
-        "Supplier<T>, DoubleSupplier, IntSupplier, LongSupplier\n" +
-        "Supplier<LocalDateTime> now = LocalDateTime::now;\n\n" +
-        "BiConsumer<T,U>, BiFunction<T,U,R>, BiPredicate<T,U>, DoubleToIntFunction, DoubleToLongFunction, IntToDoubleFunction, IntToLongFunction, LongToDoubleFunction, LongToIntFunction\n" +
-        "ToDoubleBiFunction<T,U>, ToLongBiFunction<T,U>, ToIntBiFunction<T,U>,\n" +
-        "ToDoubleFunction<T>, ToLongFunction<T>, ToIntFunction<T>\n" +
-        "ObjDoubleConsumer<T>, ObjLongConsumer<T>, ObjIntConsumer<T>\n" +
+        "<b>Java 8.</b><br> <abbr title='interface ILambda {<br>" +
+        "\tint calc(int x, int y);<br>" +
+        "}<br>" +
+        "<br>" +
+        "void method() {<br>" +
+        "\tILambda op = (x, y) -> 2 * x + y;<br>" +
+        "\tint result = op.calc(10, 20);<br>" +
+        "}'>Lambda-expressions</abbr>, <abbr title='interface ILambda {<br>" +
+        "\tint length(String s);<br>" +
+        "}<br>" +
+        "<br>" +
+        "void method() {<br>" +
+        "\tILambda op = String::length;<br>" +
+        "\tint result = op.length(\"hello\");<br>" +
+        "}'>method reference</abbr>, <abbr title='Function<T, R>, DoubleFunction<R>, IntFunction<R>, LongFunction<R><br>" +
+        "Function<String, Integer> toInteger = Integer::valueOf;<br><br>" +
+        "UnaryOperator<T>, DoubleUnaryOperator, IntUnaryOperator, LongUnaryOperator<br>" +
+        "UnaryOperator<Integer> operator = x -> x * x;<br><br>" +
+        "BinaryOperator<T>, DoubleBinaryOperator, IntBinaryOperator, LongBinaryOperator<br>" +
+        "BinaryOperator<Integer> operator = (a, b) -> a + b;<br><br>" +
+        "Predicate<T>, DoublePredicate, IntPredicate, LongPredicate<br>" +
+        "Predicate<String> predicate = (s) -> s.length() > 0;<br><br>" +
+        "Consumer<T>, DoubleConsumer, IntConsumer, LongConsumer<br>" +
+        "Consumer<String> hello = (name) -> System.out.println(\"Hello, \" + name);<br><br>" +
+        "Supplier<T>, DoubleSupplier, IntSupplier, LongSupplier<br>" +
+        "Supplier<LocalDateTime> now = LocalDateTime::now;<br><br>" +
+        "BiConsumer<T,U>, BiFunction<T,U,R>, BiPredicate<T,U>, DoubleToIntFunction, DoubleToLongFunction, IntToDoubleFunction, IntToLongFunction, LongToDoubleFunction, LongToIntFunction<br>" +
+        "ToDoubleBiFunction<T,U>, ToLongBiFunction<T,U>, ToIntBiFunction<T,U>,<br>" +
+        "ToDoubleFunction<T>, ToLongFunction<T>, ToIntFunction<T><br>" +
+        "ObjDoubleConsumer<T>, ObjLongConsumer<T>, ObjIntConsumer<T><br>" +
         "'>functional interfaces</abbr>, <abbr title='collection.parallelStream(), filter(), skip(), distinct(), limit(), map(), reduce(), sorted(), collect(), count(), min(), max(), flatMap(), findFirst(), findAny(), anyMatch(), noneMatch(), allMatch(), forEach(), forEachOrdered(), toArray(), peek(); sum(), average() for stream of numbers.'>streams</abbr>, " +
-        "<abbr title='map.putIfAbsent(\"a\", \"Aa\");\n" +
-        "map.forEach((k, v) -> System.out.println(v));\n" +
-        "map.compute(\"a\", (k, v) -> String.valueOf(k).concat(v)); //[\"a\", \"aAa\"]\n" +
-        "map.computeIfPresent(\"a\", (k, v) -> k.concat(v));\n" +
-        "map.computeIfAbsent(\"a\", k -> \"A\".concat(k)); //[\"a\",\"Aa\"]\n" +
-        "map.getOrDefault(\"a\", \"not found\");\n" +
-        "map.merge(\"a\", \"z\", (value, newValue) -> value.concat(newValue)); //[\"a\",\"Aaz\"]'>map methods</abbr>, <abbr title='JavaScript engine.'>Nashorn</abbr>, <abbr title='String b64 = Base64.getEncoder().encodeToString(\"input\".getBytes(\"utf-8\"));\n" +
+        "<abbr title='map.putIfAbsent(\"a\", \"Aa\");<br>" +
+        "map.forEach((k, v) -> System.out.println(v));<br>" +
+        "map.compute(\"a\", (k, v) -> String.valueOf(k).concat(v)); //[\"a\", \"aAa\"]<br>" +
+        "map.computeIfPresent(\"a\", (k, v) -> k.concat(v));<br>" +
+        "map.computeIfAbsent(\"a\", k -> \"A\".concat(k)); //[\"a\",\"Aa\"]<br>" +
+        "map.getOrDefault(\"a\", \"not found\");<br>" +
+        "map.merge(\"a\", \"z\", (value, newValue) -> value.concat(newValue)); //[\"a\",\"Aaz\"]'>map methods</abbr>, <abbr title='JavaScript engine.'>Nashorn</abbr>, <abbr title='String b64 = Base64.getEncoder().encodeToString(\"input\".getBytes(\"utf-8\"));<br>" +
         "new String(Base64.getDecoder().decode(\"aW5wdXQ==\"), \"utf-8\");'>Base64</abbr>.",
 
         "<b>Transaction isolation levels:</b> Read uncommitted, Read committed, Repeatable reads, Serializable.",
@@ -112,42 +120,46 @@
         "<b>Algorithms with time complexities:</b><br> Linear Search - O(n), Binary Search - O(log&nbsp;n);<br> Bubble Sort - O(n<sup>2</sup>), Insertion Sort - O(n<sup>2</sup>), Quick Sort - O(n&nbsp;log&nbsp;n), Merge Sort - O(n&nbsp;log&nbsp;n), Selection Sort - O(n<sup>2</sup>).",
         "<b>Logical operators:</b> &, &&, |, ||, <abbr title='Exclusive OR.'>^</abbr>, !, ==, !=, <abbr title='Ternary operator.'>(?:)</abbr>, &=, |=, ^=",
         "<b>Bit operations:</b> ~, &, |, ^, <<, >>, >>>, &=, |=, ^=, <<=, >>=, >>>=",
-        "<b>Kubernetes/K8s:</b> build docker image, deployment to start pods: kubectl apply -f <abbr title='apiVersion: apps/v1\n" +
-        "kind: Deployment\n" +
-        "metadata:\n" +
-        "  name: app\n" +
-        "spec:\n" +
-        "  replicas: 1\n" +
-        "  selector:\n" +
-        "    matchLabels:\n" +
-        "      app: app\n" +
-        "  template:\n" +
-        "    metadata:\n" +
-        "      labels:\n" +
-        "        app: app\n" +
-        "    spec:\n" +
-        "      containers:\n" +
-        "      - name: java\n" +
-        "        image: app\n" +
-        "        imagePullPolicy: Never\n" +
-        "        ports:\n" +
-        "        - containerPort: 80\n'>app-deployment.yaml</abbr>, service to share app: kubectl apply -f <abbr title='apiVersion: v1\n" +
-        "kind: Service\n" +
-        "metadata:\n" +
-        " name: app-nodeport\n" +
-        "spec:\n" +
-        " type: NodePort [ClusterIP (default), LoadBalancer, ExternalName]\n" +
-        " ports:\n" +
-        " - port: 80\n" +
-        "   targetPort: 80\n" +
-        "   nodePort: 30123\n" +
-        " selector:\n" +
-        "   app: app\n'>app-service.yaml</abbr>",
-
+        "<b>Kubernetes/K8s:</b> build docker image, deployment to start pods: kubectl apply -f <abbr title='apiVersion: apps/v1<br>" +
+        "kind: Deployment<br>" +
+        "metadata:<br>" +
+        "&ensp;&ensp;name: app<br>" +
+        "spec:<br>" +
+        "&ensp;&ensp;replicas: 1<br>" +
+        "&ensp;&ensp;selector:<br>" +
+        "&ensp;&ensp;&ensp;&ensp;matchLabels:<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;app: app<br>" +
+        "&ensp;&ensp;template:<br>" +
+        "&ensp;&ensp;&ensp;&ensp;metadata:<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;labels:<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;app: app<br>" +
+        "&ensp;&ensp;&ensp;&ensp;spec:<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;containers:<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- name: java<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;image: app<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;imagePullPolicy: Never<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ports:<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- containerPort: 80<br>'>app-deployment.yaml</abbr>, service to share app: kubectl apply -f <abbr title='apiVersion: v1<br>" +
+        "kind: Service<br>" +
+        "metadata:<br>" +
+        "&ensp;name: app-nodeport<br>" +
+        "spec:<br>" +
+        "&ensp;type: NodePort [ClusterIP (default), LoadBalancer, ExternalName]<br>" +
+        "&ensp;ports:<br>" +
+        "&ensp;- port: 80<br>" +
+        "&ensp;&ensp;&ensp;targetPort: 80<br>" +
+        "&ensp;&ensp;&ensp;nodePort: 30123<br>" +
+        "&ensp;selector:<br>" +
+        "&ensp;&ensp;&ensp;app: app<br>'>app-service.yaml</abbr>",
     ];
     const blocks = document.getElementById("blocks");
     questions.map(question => {
       blocks.innerHTML += "<p>" + question + "</p>";
+    });
+    $('abbr').tooltip({
+      html: true,
+      placement: 'auto',
+      template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
     });
   </script>
 </body>
