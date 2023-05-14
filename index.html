@@ -19,12 +19,6 @@
       padding: 5px;
       margin: 0;
     }
-    #blocks p:nth-child(odd) {
-      background: lightcoral;
-    }
-    #blocks p:nth-child(even) {
-      background: lightblue;
-    }
     .tooltip-inner {
       text-align: left !important;
       min-width: 320px;
@@ -158,8 +152,8 @@
         "&ensp;&ensp;&ensp;app: app<br>'>app-service.yaml</abbr>",
     ];
     const blocks = document.getElementById("blocks");
-    questions.map(question => {
-      blocks.innerHTML += "<p>" + question + "</p>";
+    questions.map((question, index) => {
+      blocks.innerHTML += `<p class='text-white ${index % 2 === 0 ? "bg-primary" : "bg-danger"}'>${question}</p>`;
     });
     $('abbr').tooltip({
       html: true,
