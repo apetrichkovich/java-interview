@@ -61,19 +61,19 @@
         "<b>Collections only for read:</b> Collections.unmodifiableList(list);<br> Collections.unmodifiableSet(set);<br> Collections.unmodifiableMap(map).",
 
         "<b>Java 8.</b><br> <abbr title='interface ILambda {<br>" +
-        "\tint calc(int x, int y);<br>" +
+        "&ensp;int calc(int x, int y);<br>" +
         "}<br>" +
         "<br>" +
         "void method() {<br>" +
-        "\tILambda op = (x, y) -> 2 * x + y;<br>" +
-        "\tint result = op.calc(10, 20);<br>" +
+        "&ensp;ILambda op = (x, y) -> 2 * x + y;<br>" +
+        "&ensp;int result = op.calc(10, 20);<br>" +
         "}'>Lambda-expressions</abbr>, <abbr title='interface ILambda {<br>" +
-        "\tint length(String s);<br>" +
+        "&ensp;int length(String s);<br>" +
         "}<br>" +
         "<br>" +
         "void method() {<br>" +
-        "\tILambda op = String::length;<br>" +
-        "\tint result = op.length(\"hello\");<br>" +
+        "&ensp;ILambda op = String::length;<br>" +
+        "&ensp;int result = op.length(\"hello\");<br>" +
         "}'>method reference</abbr>, <abbr title='Function<T, R>, DoubleFunction<R>, IntFunction<R>, LongFunction<R><br>" +
         "Function<String, Integer> toInteger = Integer::valueOf;<br><br>" +
         "UnaryOperator<T>, DoubleUnaryOperator, IntUnaryOperator, LongUnaryOperator<br>" +
@@ -98,7 +98,7 @@
         "map.computeIfAbsent(\"a\", k -> \"A\".concat(k)); //[\"a\",\"Aa\"]<br>" +
         "map.getOrDefault(\"a\", \"not found\");<br>" +
         "map.merge(\"a\", \"z\", (value, newValue) -> value.concat(newValue)); //[\"a\",\"Aaz\"]'>map methods</abbr>, <abbr title='JavaScript engine.'>Nashorn</abbr>, <abbr title='String b64 = Base64.getEncoder().encodeToString(\"input\".getBytes(\"utf-8\"));<br>" +
-        "new String(Base64.getDecoder().decode(\"aW5wdXQ==\"), \"utf-8\");'>Base64</abbr>.",
+        "String input = new String(Base64.getDecoder().decode(\"aW5wdXQ==\"), \"utf-8\");'>Base64</abbr>.",
 
         "<b>Transaction isolation levels:</b> Read uncommitted, Read committed (default in PG), Repeatable reads, Serializable.",
         "<b>LOCK TABLE</b> users IN M MODE, where M can be ACCESS SHARE, ROW SHARE, ROW EXCLUSIVE, SHARE UPDATE EXCLUSIVE, SHARE, SHARE ROW EXCLUSIVE, EXCLUSIVE, ACCESS EXCLUSIVE",
