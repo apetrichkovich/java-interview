@@ -9,7 +9,7 @@
     }
     #blocks {
       min-height: 480px;
-      column-count: 1;
+      column-count: 5;
       column-gap: 1px;
       font-size: 16px;
       font-family: sans-serif;
@@ -42,7 +42,19 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script>
     const questions = [
-        "<b>JavaScript</b> ...",
+        "<b><abbr title='const add = (function () {<br>" +
+        "&ensp;&ensp;let counter = 0;<br>" +
+        "&ensp;&ensp;return function () {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;counter += 1;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;return counter;<br>" +
+        "&ensp;&ensp;}<br>" +
+        "})();<br>" +
+        "<br>" +
+        "add();<br>" +
+        "add();<br>" +
+        "add();<br>" +
+        "<br>" +
+        "// the counter is now 3'>Closures</abbr></b> - a form of lexical scoping used to preserve variables from the outer scope of a function in the inner scope of a function.",
 
         "<span class='small'><b>Questions:</b><br> 1) What projects company has?<br> 2) Do you have business analytics in the team?<br> 3) What technologies do you use?<br> [4) It would be easier to adapt if you have R-speaking people. Do you have such? :)]<br> 5) How many time it will take to get response from you?</span>",
     ];
