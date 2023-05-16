@@ -83,6 +83,12 @@
         "&ensp;&ensp;// Do something;<br>" +
         "})();'>Immediately Invoked Function</abbr></b> (known as IIFE and pronounced as IIFY) is a function that runs as soon as it is defined.",
         "<b>\"use strict\";</b> mode: duplicate arguments are not allowed, using JavaScript keyword as a parameter or function name is not allowed, creating global variables is not allowed.",
+        "<b><abbr title='function sayHello(){<br>" +
+        "&ensp;&ensp;return \"Hello \" + this.name;<br>" +
+        "}<br><br>" +
+        "var obj = {name: \"Sandy\"};<br><br>" +
+        "sayHello.call(obj);<br><br>" +
+        "// Returns \"Hello Sandy\"'>call()</abbr>, apply() and, bind() methods.</b>",
 
         "<span class='small'><b>Questions:</b><br> 1) What projects company has?<br> 2) Do you have business analytics in the team?<br> 3) What technologies do you use?<br> [4) It would be easier to adapt if you have R-speaking people. Do you have such? :)]<br> 5) How many time it will take to get response from you?</span>",
     ];
