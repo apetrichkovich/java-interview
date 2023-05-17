@@ -127,6 +127,23 @@
         "}<br>" +
         "operationOnSum(3, 3, divideByHalf); // Outputs 3<br>" +
         "operationOnSum(5, 5, multiplyBy2); // Outputs 20'>Сallback</abbr></b> - function that will be executed after another function gets executed.",
+        "<b><abbr title='function memoizedAddTo256() {<br>" +
+        "&ensp;&ensp;var cache = {};<br>" +
+        "<br>" +
+        "&ensp;&ensp;return function(num) {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;if (num in cache) {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;console.log(\"cached value\");<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return cache[num]<br>" +
+        "&ensp;&ensp;&ensp;&ensp;} else {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;cache[num] = num + 256;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return cache[num];<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br>" +
+        "&ensp;&ensp;}<br>" +
+        "}<br>" +
+        "var memoizedFunc = memoizedAddTo256();<br>" +
+        "<br>" +
+        "memoizedFunc(20); // Normal return<br>" +
+        "memoizedFunc(20); // Cached return'>Memoization</abbr></b> - form of caching where the return value of a function is cached based on its parameters.",
 
         "<span class='small'><b>Questions:</b><br> 1) What projects company has?<br> 2) Do you have business analytics in the team?<br> 3) What technologies do you use?<br> [4) It would be easier to adapt if you have R-speaking people. Do you have such? :)]<br> 5) How many time it will take to get response from you?</span>",
     ];
