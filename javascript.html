@@ -68,9 +68,11 @@
         "&ensp;&ensp;}, 300);<br>" +
         "});<br>" +
         "<br>" +
-        "promise1.then((value) => {<br>" +
-        "&ensp;&ensp;console.log(value);<br>" +
+        "promise1.then(result => {<br>" +
+        "&ensp;&ensp;console.log(result);<br>" +
         "&ensp;&ensp;// Expected output: foo<br>" +
+        "}).catch(error => {<br>" +
+        "&ensp;&ensp;console.log(error);<br>" +
         "});\">Promise</abbr></b> - object for asynchronous calculations.",
         "<b><abbr title='Babel.'>Transpiler</abbr></b> - software that translates one source code to another source code (modern code to old syntax, another language).",
         "<b><abbr title='core-js, polyfill.io'>Polyfill</abbr></b> - library that adds new features in old browsers.",
