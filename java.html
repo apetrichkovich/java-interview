@@ -130,6 +130,18 @@
         "<b>Thread Lifecycle:</b> NEW, ACTIVE (RUNNABLE, RUNNING), BLOCKED, WAITING, TIMED_WAITING, TERMINATED/DEAD.",
         "<b>Executors/ExecutorService:</b> newCachedThreadPool(), newFixedThreadPool(int nThreads), newSingleThreadScheduledExecutor(), newScheduledThreadPool(int corePoolSize).",
         "<b>CAP theorem:</b> <abbr title='All clients always have the same view of the data.'>Consistency</abbr>, <abbr title='Each client can always read and write.'>Availability</abbr>, <abbr title='The system works well despite physical network partitions.'>Partition tolerance</abbr>. CA: MySQL, MariaDB, PostgreSQL, MS SQL. CP: MongoDB, Redis. AP: Cassandra, CouchDB/Couchbase, Riak.",
+        "<b><abbr title='Process of structuring a relational database.'>Database normalization</abbr>:</b> " +
+        "<b><abbr title='Unnormalized form - database data model which does not meet any of the conditions of database normalization.'>UNF</abbr></b>, " +
+        "<b><abbr title='First normal form. Each field contains a single value. A field may not contain a set of values or a nested record.'>1NF</abbr></b>, " +
+        "<b><abbr title='Second normal form. It is in first normal form. It does not have any non-prime attribute that is functionally dependent on any proper subset of any candidate key of the relation (i.e. it lacks partial dependencies). A non-prime attribute of a relation is an attribute that is not a part of any candidate key of the relation.'>2NF</abbr></b>, " +
+        "<b><abbr title='Third normal form. All the attributes (e.g. database columns) are functionally dependent on solely the primary key. Codd defined this as a relation in second normal form where all non-prime attributes depend only on the candidate keys and do not have a transitive dependency on another key.'>3NF</abbr></b>, " +
+        "<b><abbr title='Elementary key normal form. Subtle enhancement on 3NF.'>EKNF</abbr></b>, " +
+        "<b><abbr title='Boyce–Codd normal form. Stronger version of 3NF.'>BCNF</abbr></b>, " +
+        "<b><abbr title='Fourth normal form. Does not contain non-trivial multivalued dependencies.'>4NF</abbr></b>, " +
+        "<b><abbr title='Essential tuple normal form.'>ETNF</abbr></b>, " +
+        "<b><abbr title='Fifth normal form. Every non-trivial join dependency in that table is implied by the candidate keys.'>5NF</abbr></b>, " +
+        "<b><abbr title='Domain-key normal form. Database contains no constraints other than domain constraints and key constraints.'>DKNF</abbr></b>, " +
+        "<b><abbr title='Sixth normal form. Table satisfies no nontrivial join dependencies at all.'>6NF</abbr></b>.",
 
         "<b>Algorithms with time complexities:</b><br> Linear Search - O(n), Binary Search - O(log&nbsp;n);<br> Bubble Sort - O(n<sup>2</sup>), Insertion Sort - O(n<sup>2</sup>), Quick Sort - O(n&nbsp;log&nbsp;n), Merge Sort - O(n&nbsp;log&nbsp;n), Selection Sort - O(n<sup>2</sup>).",
         "<b>Logical operators:</b> &, &&, |, ||, <abbr title='Exclusive OR.'>^</abbr>, !, ==, !=, <abbr title='Ternary operator.'>(?:)</abbr>, &=, |=, ^=",
