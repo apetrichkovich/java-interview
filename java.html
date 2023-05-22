@@ -48,7 +48,27 @@
         "<b>Functional programming</b> - programming paradigm where program is presented as the computation of functions.",
         "<b><abbr title='Aspect-oriented programming.'>AOP</abbr></b> - programming paradigm based on idea to split program to modules.",
         "<b><abbr title=\"Don't Repeat Youself.\">DRY</abbr>/<abbr title=\"Duplication Is Evil.\">DIE</abbr>, <abbr title=\"Keep It Simple, Stupid.\">KISS</abbr>, <abbr title=\"You Ain't Gonna Need It.\">YAGNI</abbr>, <abbr title=\"<span class='displayInlineBlock firstLetterBold'>Single</span> responsibility principle: each class should have only one responsibility.<br> <span class='displayInlineBlock firstLetterBold'>Open/closed</span> principle: open for extension, but closed for modification.<br> <span class='displayInlineBlock firstLetterBold'>Liskov</span> substitution principle: the ability to use subclasses of the base class.<br> <span class='displayInlineBlock firstLetterBold'>Interface</span> segregation principle: many special interfaces are better than one common interface.<br> <span class='displayInlineBlock firstLetterBold'>Dependency</span> inversion principle: dependence based on abstractions (not on something specific).\">SOLID</abbr></b>.</b>",
-        "<b>Modifiers:</b> <abbr title='Visible in class.'>private</abbr>, <abbr title='Without modifier: visible in package.'>(default, package-private, package level)</abbr>, <abbr title='Visible in package and inheritors.'>protected</abbr>, <abbr title='Visible for all.'>public</abbr>, <abbr title='Guarantees immutability for variables/constants (stack memory). Class cannot have children. Method cannot be overridden. Field cannot change its value after initialization. Method parameters cannot change their value inside the method. Local variables cannot be changed after they have been assigned a value.'>final</abbr>, <abbr title='Class can be only parent for other classes. Method without implementation, should be overridden.'>abstract</abbr>.",
+        "<b>Modifiers:</b> <abbr title='Visible in class.'>private</abbr>, <abbr title='Without modifier: visible in package.'>(default, package-private, package level)</abbr>, <abbr title='Visible in package and inheritors.'>protected</abbr>, <abbr title='Visible for all.'>public</abbr>, <abbr title='Guarantees immutability for variables/constants (stack memory). Class cannot have children. Method cannot be overridden. Field cannot change its value after initialization. Method parameters cannot change their value inside the method. Local variables cannot be changed after they have been assigned a value.<br><br>public final class ImmutableClass {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;private final String name;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;public ImmutableClass(String name) {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;this.name = name;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br>" +
+        "&ensp;&ensp;&ensp;&ensp;public String getName() {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return name;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br>" +
+        "&ensp;&ensp;&ensp;&ensp;@Override public String toString() {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return \"ImmutableClass [name=\" + name + \"]\";<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br>" +
+        "&ensp;&ensp;&ensp;&ensp;@Override public boolean equals(Object obj) {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;if (this == obj) { return true; }<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;if (obj == null || getClass() != obj.getClass()) { return false; }<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ImmutableClass other = (ImmutableClass) obj;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return Objects.equals(name, other.name);<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br>" +
+        "&ensp;&ensp;&ensp;&ensp;@Override public int hashCode() {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return Objects.hash(name);<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br>" +
+        "}<br>'>final</abbr>, <abbr title='Class can be only parent for other classes. Method without implementation, should be overridden.'>abstract</abbr>.",
         "<b>Java Virtual Machine</b> - 32 or 64-bit virtual machine that executes Java byte-code using interpreter. Works with <b>primitive</b> and <b>reference</b> (classes, arrays, interfaces) data types.",
         "<b>Java Runtime Environment = JVM + libraries.<br> Java Development Kit = JRE + compiler + examples + documentation + utilities.</b>",
         "<b>Java Memory Model:</b> Stacks (frames), Heap (Young Generation [Eden, From Space, To Space, Virtual memory], Old Generation [Tenured, Virtual memory]).",
