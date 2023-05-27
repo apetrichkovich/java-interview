@@ -48,32 +48,86 @@
         "<b>Functional programming</b> - programming paradigm where program is presented as the computation of functions.",
         "<b><abbr title='Aspect-oriented programming.'>AOP</abbr></b> - programming paradigm based on idea to split program to modules.",
         "<b><abbr title=\"Don't Repeat Youself.\">DRY</abbr>/<abbr title=\"Duplication Is Evil.\">DIE</abbr>, <abbr title=\"Keep It Simple, Stupid.\">KISS</abbr>, <abbr title=\"You Ain't Gonna Need It.\">YAGNI</abbr>, <abbr title=\"<span class='displayInlineBlock firstLetterBold'>Single</span> responsibility principle: each class should have only one responsibility.<br> <span class='displayInlineBlock firstLetterBold'>Open/closed</span> principle: open for extension, but closed for modification.<br> <span class='displayInlineBlock firstLetterBold'>Liskov</span> substitution principle: the ability to use subclasses of the base class.<br> <span class='displayInlineBlock firstLetterBold'>Interface</span> segregation principle: many special interfaces are better than one common interface.<br> <span class='displayInlineBlock firstLetterBold'>Dependency</span> inversion principle: dependence based on abstractions (not on something specific).\">SOLID</abbr></b>.</b>",
-        "<b>Modifiers:</b> <abbr title='Visible in class.'>private</abbr>, <abbr title='Without modifier: visible in package.'>(default, package-private, package level)</abbr>, <abbr title='Visible in package and inheritors.'>protected</abbr>, <abbr title='Visible for all.'>public</abbr>, <abbr title='Guarantees immutability for variables/constants (stack memory). Class cannot have children. Method cannot be overridden. Field cannot change its value after initialization. Method parameters cannot change their value inside the method. Local variables cannot be changed after they have been assigned a value.<br><br>public final class ImmutableClass {<br>" +
-        "&ensp;&ensp;&ensp;&ensp;private final String name;<br>" +
-        "&ensp;&ensp;&ensp;&ensp;public ImmutableClass(String name) {<br>" +
-        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;this.name = name;<br>" +
-        "&ensp;&ensp;&ensp;&ensp;}<br>" +
-        "&ensp;&ensp;&ensp;&ensp;public String getName() {<br>" +
-        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return name;<br>" +
-        "&ensp;&ensp;&ensp;&ensp;}<br>" +
-        "&ensp;&ensp;&ensp;&ensp;@Override public String toString() {<br>" +
-        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return \"ImmutableClass [name=\" + name + \"]\";<br>" +
-        "&ensp;&ensp;&ensp;&ensp;}<br>" +
-        "&ensp;&ensp;&ensp;&ensp;@Override public boolean equals(Object obj) {<br>" +
-        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;if (this == obj) { return true; }<br>" +
-        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;if (obj == null || getClass() != obj.getClass()) { return false; }<br>" +
-        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ImmutableClass other = (ImmutableClass) obj;<br>" +
-        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return Objects.equals(name, other.name);<br>" +
-        "&ensp;&ensp;&ensp;&ensp;}<br>" +
-        "&ensp;&ensp;&ensp;&ensp;@Override public int hashCode() {<br>" +
-        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return Objects.hash(name);<br>" +
-        "&ensp;&ensp;&ensp;&ensp;}<br>" +
-        "}<br>'>final</abbr>, <abbr title='Class can be only parent for other classes. Method without implementation, should be overridden.'>abstract</abbr>.",
+        "<b>Modifiers:</b> <abbr title='Visible in class.'>private</abbr>, <abbr title='Without modifier: visible in package.'>(default, package-private, package level)</abbr>, <abbr title='Visible in package and inheritors.'>protected</abbr>, <abbr title='Visible for all.'>public</abbr>, <abbr title='Guarantees immutability for variables/constants (stack memory). Class cannot have children. Method cannot be overridden. Field cannot change its value after initialization. Method parameters cannot change their value inside the method. Local variables cannot be changed after they have been assigned a value.'>final</abbr>, <abbr title='Class can be only parent for other classes. Method without implementation, should be overridden.'>abstract</abbr>.",
         "<b>Java Virtual Machine</b> - 32 or 64-bit virtual machine that executes Java byte-code using interpreter. Works with <b>primitive</b> and <b>reference</b> (classes, arrays, interfaces) data types.",
         "<b>Java Runtime Environment = JVM + libraries.<br> Java Development Kit = JRE + compiler + examples + documentation + utilities.</b>",
         "<b>Java Memory Model:</b> Stacks (frames), Heap (Young Generation [Eden, From Space, To Space, Virtual memory], Old Generation [Tenured, Virtual memory]).",
         "<b>Garbage Collectors:</b> Serial, Parallel, Concurrent Mark Sweep (CMS), Garbage-First (G1).",
-        "<b>Immutable data types:</b> String, Integer, Long, Float, Double, Byte, Short, Character, Boolean; BigDecimal, BigInteger; LocalDate, LocalTime, LocalDateTime, Instant; Enum; Duration, Period.",
+        "<b><abbr title='import java.util.HashMap;<br>" +
+        "import java.util.Iterator;<br>" +
+        "<br>" +
+        "public <b>final</b> class FinalClassExample {<br>" +
+        "<br>" +
+        "&ensp;// fieldss of the FinalClassExample class<br>" +
+        "&ensp;private <b>final</b> int id;<br>" +
+        "&ensp;private <b>final</b> String name;<br>" +
+        "&ensp;private <b>final</b> HashMap<String,String> testMap;<br>" +
+        "<br>" +
+        "&ensp;public int <b>get</b>Id() {<br>" +
+        "&ensp;&ensp;return id;<br>" +
+        "&ensp;}<br>" +
+        "<br>" +
+        "&ensp;public String <b>get</b>Name() {<br>" +
+        "&ensp;&ensp;return name;<br>" +
+        "&ensp;}<br>" +
+        "<br>" +
+        "&ensp;// Getter function for mutable objects<br>" +
+        "&ensp;public HashMap<String, String> <b>get</b>TestMap() {<br>" +
+        "&ensp;&ensp;return (HashMap<String, String>) testMap.clone();<br>" +
+        "&ensp;}<br>" +
+        "<br>" +
+        "&ensp;// Constructor method performing <b><font size=\"+1\">deep copy</font></b><br>" +
+        "&ensp;public FinalClassExample(int i, String n, HashMap<String,String> hm){<br>" +
+        "&ensp;&ensp;System.out.println(\"Performing Deep Copy for Object initialization\");<br>" +
+        "<br>" +
+        "&ensp;&ensp;// \"this\" keyword refers to the current object<br>" +
+        "&ensp;&ensp;this.id=i;<br>" +
+        "&ensp;&ensp;this.name=n;<br>" +
+        "<br>" +
+        "&ensp;&ensp;HashMap<String,String> tempMap=new HashMap<String,String>();<br>" +
+        "&ensp;&ensp;String key;<br>" +
+        "&ensp;&ensp;Iterator<String> it = hm.keySet().iterator();<br>" +
+        "&ensp;&ensp;while(it.hasNext()){<br>" +
+        "&ensp;&ensp;&ensp;key=it.next();<br>" +
+        "&ensp;&ensp;&ensp;tempMap.put(key, hm.get(key));<br>" +
+        "&ensp;&ensp;}<br>" +
+        "&ensp;&ensp;this.testMap=tempMap;<br>" +
+        "&ensp;}<br>" +
+        "<br>" +
+        "&ensp;// Test the immutable class<br>" +
+        "<br>" +
+        "&ensp;public static void main(String[] args) {<br>" +
+        "&ensp;&ensp;HashMap<String, String> h1 = new HashMap<String,String>();<br>" +
+        "&ensp;&ensp;h1.put(\"1\", \"first\");<br>" +
+        "&ensp;&ensp;h1.put(\"2\", \"second\");<br>" +
+        "&ensp;&ensp;<br>" +
+        "&ensp;&ensp;String s = \"original\";<br>" +
+        "&ensp;&ensp;<br>" +
+        "&ensp;&ensp;int i=10;<br>" +
+        "&ensp;&ensp;<br>" +
+        "&ensp;&ensp;FinalClassExample ce = new FinalClassExample(i,s,h1);<br>" +
+        "&ensp;&ensp;<br>" +
+        "&ensp;&ensp;// print the ce values<br>" +
+        "&ensp;&ensp;System.out.println(\"ce id: \"+ce.getId());<br>" +
+        "&ensp;&ensp;System.out.println(\"ce name: \"+ce.getName());<br>" +
+        "&ensp;&ensp;System.out.println(\"ce testMap: \"+ce.getTestMap());<br>" +
+        "&ensp;&ensp;// change the local variable values<br>" +
+        "&ensp;&ensp;i=20;<br>" +
+        "&ensp;&ensp;s=\"modified\";<br>" +
+        "&ensp;&ensp;h1.put(\"3\", \"third\");<br>" +
+        "&ensp;&ensp;// print the values again<br>" +
+        "&ensp;&ensp;System.out.println(\"ce id after local variable change: \"+ce.getId());<br>" +
+        "&ensp;&ensp;System.out.println(\"ce name after local variable change: \"+ce.getName());<br>" +
+        "&ensp;&ensp;System.out.println(\"ce testMap after local variable change: \"+ce.getTestMap());<br>" +
+        "&ensp;&ensp;<br>" +
+        "&ensp;&ensp;HashMap<String, String> hmTest = ce.getTestMap();<br>" +
+        "&ensp;&ensp;hmTest.put(\"4\", \"new\");<br>" +
+        "&ensp;&ensp;<br>" +
+        "&ensp;&ensp;System.out.println(\"ce testMap after changing variable from getter methods: \"+ce.getTestMap());<br>" +
+        "<br>" +
+        "&ensp;}<br>" +
+        "<br>" +
+        "}'>Immutable</abbr> data types:</b> String, Integer, Long, Float, Double, Byte, Short, Character, Boolean; BigDecimal, BigInteger; LocalDate, LocalTime, LocalDateTime, Instant; Enum; Duration, Period.",
         "<b>private <abbr title='Uses common memory, visible by all threads, but not thread-safe.'>volatile</abbr> static boolean ready;</b>",
         "<b>AtomicBoolean, AtomicInteger, AtomicLong, AtomicIntegerArray, AtomicLongArray</b>",
 
