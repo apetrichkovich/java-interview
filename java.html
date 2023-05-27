@@ -78,8 +78,34 @@
         "<b>AtomicBoolean, AtomicInteger, AtomicLong, AtomicIntegerArray, AtomicLongArray</b>",
 
         "<b>StringBuffer</b> - slow, synchronized.<br> <b>StringBuilder</b> - fast, not synchronized.",
-        "<b>hashCode() and equals() contract:</b> if objects are equal then the hash codes must be the same.",
-        "<b>Object methods:</b> boolean equals(Object obj), int hashCode(), String toString(), Class getClass(), Object clone(), void notify(), void notifyAll(), void wait(), void wait(long timeout), void wait(long timeout, int nanos), void finalize().",
+        "<b><abbr title='public class MyClass {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;private int id;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;private String name;<br>" +
+        "<br>" +
+        "&ensp;&ensp;&ensp;&ensp;// Constructor and other methods<br>" +
+        "<br>" +
+        "&ensp;&ensp;&ensp;&ensp;@Override<br>" +
+        "&ensp;&ensp;&ensp;&ensp;public int hashCode() {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;int result = 17;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;result = 31 * result + id;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;result = 31 * result + (name != null ? name.hashCode() : 0);<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return result;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br>" +
+        "}'>hashCode()</abbr> and equals() contract:</b> if objects are equal then the hash codes must be the same.",
+        "<b>Object methods:</b> boolean equals(Object obj), <abbr title='public class MyClass {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;private int id;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;private String name;<br>" +
+        "<br>" +
+        "&ensp;&ensp;&ensp;&ensp;// Constructor and other methods<br>" +
+        "<br>" +
+        "&ensp;&ensp;&ensp;&ensp;@Override<br>" +
+        "&ensp;&ensp;&ensp;&ensp;public int hashCode() {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;int result = 17;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;result = 31 * result + id;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;result = 31 * result + (name != null ? name.hashCode() : 0);<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return result;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br>" +
+        "}'><b>int hashCode()</b></abbr>, String toString(), Class getClass(), Object clone(), void notify(), void notifyAll(), void wait(), void wait(long timeout), void wait(long timeout, int nanos), void finalize().",
         "<b>Reflection</b> - API that allows to get and modify runtime attributes of classes, interfaces, fields and methods.",
         "<b>Сloning:</b> implements Cloneable + override clone() {super.clone()}; constructor (recommended), static factory method, bytes serialization/deserialization.",
         "<b>Exceptions. Throwable => Exception and Error (not recommended to catch). Checked and unchecked</b> (Error, RuntimeException; ArithmeticException, ClassCastException, ConcurrentModificationException, IllegalArgumentException, IllegalStateException, IndexOutOfBoundsException, NoSuchElementException, NullPointerException, UnsupportedOperationException).",
