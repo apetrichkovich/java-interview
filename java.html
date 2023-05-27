@@ -229,6 +229,18 @@
         "<b><abbr title='Watches microservice, stop sending requests on failure, try again, if OK then starts sending requests again.'>Circuit breakers</abbr>:</b> Netflix Hystrix, Resilience4j, Spring Cloud Circuit Breaker.",
         "<b><abbr title='Programming paradigm that focuses on building systems that are responsive, resilient, and scalable by utilizing asynchronous and non-blocking techniques.'>Reactive programming</abbr>.</b> <b><abbr title='Non-blocking reactive web framework.'>WebFlux</abbr>:</b> <b><abbr title='Represents a stream that emits at most one item. It can be seen as a container for zero or one element. It is commonly used for representing asynchronous computations that produce a single result, such as retrieving a single object from a database or making a single HTTP request.'>Mono</abbr>,</b> <b><abbr title='Represents a stream that emits zero or more items. It can be seen as a container for a potentially infinite sequence of elements. It is commonly used for representing streams of data or events, such as a stream of sensor readings, a stream of messages from a message queue, or a stream of database query results.'>Flux</abbr>.</b>",
         "<b><abbr title='Backpressure in software systems is the capability to overload the traffic communication. In other words, emitters of information overwhelm consumers with data they are not able to process.'>Backpressure</abbr> strategies in Reactive Streams: <abbr title='Controlling the data stream sent would be the first option. Basically, the publisher needs to slow down the pace of the events. Therefore, the consumer is not overloaded. Unfortunately, this is not always possible and we would need to find other available options.<br><br>WebFlux methods: thenRequest(n), limitRate(n), thenCancel().'>Controlling</abbr>, <abbr title='Buffering the extra amount of data is the second choice. With this approach, the consumer stores temporarily the remaining events until it can process them. The main drawback here is to unbind the buffer causing memory crashing.'>Buffering</abbr>, <abbr title='Dropping the extra events losing track of them. Even this solution is far from ideal, with this technique the system would not collapse.'>Dropping</abbr>.</b>",
+        "<b><abbr title='<b>Pattern: REQUEST_METHOD /api[/version]/entities[/id][/method]</b><br><br>" +
+        "POST /api/users {...}<br>" +
+        "POST /api/users/batch-create [...]<br>" +
+        "GET /api/users<br>" +
+        "GET /api/users/{id}<br>" +
+        "PUT /api/users [...]<br>" +
+        "PUT /api/users/{id} {...}<br>" +
+        "DELETE /api/users [...]<br>" +
+        "DELETE /api/users/{id}<br>" +
+        "GET /api/users/search<br>" +
+        "<br>" +
+        "<b>Versions:</b> /api/v1.0/users, /api/users?v=1.0, HTTP header X-API-Version: 1.0.'>API design</abbr>.</b>",
 
         "<span class='small'><b>Questions:</b><br> 1) What projects company has?<br> 2) Do you have business analytics in the team?<br> 3) What technologies do you use?<br> [4) It would be easier to adapt if you have R-speaking people. Do you have such? :)]<br> 5) How many time it will take to get response from you?</span>",
     ];
