@@ -145,8 +145,36 @@
         "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;result = 31 * result + (name != null ? name.hashCode() : 0);<br>" +
         "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return result;<br>" +
         "&ensp;&ensp;&ensp;&ensp;}<br>" +
-        "}'>hashCode()</abbr> and equals() contract:</b> if objects are equal then the hash codes must be the same.",
-        "<b>Object methods:</b> boolean equals(Object obj), <abbr title='public class MyClass {<br>" +
+        "}'>hashCode()</abbr> and <abbr title='@Override<br>" +
+        "public boolean equals(Object o) {<br>" +
+        "&ensp;if (this == o) {<br>" +
+        "&ensp;&ensp;return true;<br>" +
+        "&ensp;}<br>" +
+        "<br>" +
+        "&ensp;if (o == null || getClass() != o.getClass()) {<br>" +
+        "&ensp;&ensp;return false;<br>" +
+        "&ensp;}<br>" +
+        "<br>" +
+        "&ensp;Node node = (Node) o;<br>" +
+        "&ensp;return Objects.equals(id, node.id)<br>" +
+        "&ensp;&ensp;&ensp;&& Objects.equals(data, node.data)<br>" +
+        "&ensp;&ensp;&ensp;&& Objects.equals(next, node.next);<br>" +
+        "}'>equals()</abbr> contract:</b> if objects are equal then the hash codes must be the same.",
+        "<b>Object methods:</b> <abbr title='@Override<br>" +
+        "public boolean equals(Object o) {<br>" +
+        "&ensp;if (this == o) {<br>" +
+        "&ensp;&ensp;return true;<br>" +
+        "&ensp;}<br>" +
+        "<br>" +
+        "&ensp;if (o == null || getClass() != o.getClass()) {<br>" +
+        "&ensp;&ensp;return false;<br>" +
+        "&ensp;}<br>" +
+        "<br>" +
+        "&ensp;Node node = (Node) o;<br>" +
+        "&ensp;return Objects.equals(id, node.id)<br>" +
+        "&ensp;&ensp;&ensp;&& Objects.equals(data, node.data)<br>" +
+        "&ensp;&ensp;&ensp;&& Objects.equals(next, node.next);<br>" +
+        "}'>boolean equals(Object o)</abbr>, <abbr title='public class MyClass {<br>" +
         "&ensp;&ensp;&ensp;&ensp;private int id;<br>" +
         "&ensp;&ensp;&ensp;&ensp;private String name;<br>" +
         "<br>" +
