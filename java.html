@@ -144,6 +144,10 @@
         "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;result = 31 * result + id;<br>" +
         "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;result = 31 * result + (name != null ? name.hashCode() : 0);<br>" +
         "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return result;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br><br>" +
+        "&ensp;&ensp;&ensp;&ensp;@Override<br>" +
+        "&ensp;&ensp;&ensp;&ensp;public int hashCode() {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return Objects.hash(id, name);<br>" +
         "&ensp;&ensp;&ensp;&ensp;}<br>" +
         "}'>hashCode()</abbr> and <abbr title='@Override<br>" +
         "public boolean equals(Object o) {<br>" +
@@ -186,6 +190,10 @@
         "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;result = 31 * result + id;<br>" +
         "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;result = 31 * result + (name != null ? name.hashCode() : 0);<br>" +
         "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return result;<br>" +
+        "&ensp;&ensp;&ensp;&ensp;}<br><br>" +
+        "&ensp;&ensp;&ensp;&ensp;@Override<br>" +
+        "&ensp;&ensp;&ensp;&ensp;public int hashCode() {<br>" +
+        "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;return Objects.hash(id, name);<br>" +
         "&ensp;&ensp;&ensp;&ensp;}<br>" +
         "}'><b>int hashCode()</b></abbr>, String toString(), Class getClass(), Object clone(), void notify(), void notifyAll(), void wait(), void wait(long timeout), void wait(long timeout, int nanos), void finalize().",
         "<b>Reflection</b> - API that allows to get and modify runtime attributes of classes, interfaces, fields and methods.",
