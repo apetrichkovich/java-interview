@@ -278,6 +278,7 @@
         "<b><abbr title='Fifth normal form. Every non-trivial join dependency in that table is implied by the candidate keys.'>5NF</abbr></b>, " +
         "<b><abbr title='Domain-key normal form. Database contains no constraints other than domain constraints and key constraints.'>DKNF</abbr></b>, " +
         "<b><abbr title='Sixth normal form. Table satisfies no nontrivial join dependencies at all.'>6NF</abbr></b>.",
+        "<b>Constraints:</b> <abbr title='ALTER TABLE logs_2011 ADD CONSTRAINT uq UNIQUE (user_name,log_ts);'>Unique</abbr>, <abbr title='ALTER TABLE logs ADD CONSTRAINT chk CHECK (user_name = lower(user_name));'>Check</abbr>, <abbr title='CREATE TABLE schedules(id serial primary key, room int, time_slot tstzrange);<br>ALTER TABLE schedules ADD CONSTRAINT ex_schedules<br>EXCLUDE USING gist (room WITH =, time_slot WITH &&);'>Exclusion</abbr>.",
 
         "<b>Algorithms with time complexities:</b><br> Linear Search - O(n), Binary Search - O(log&nbsp;n);<br> Bubble Sort - O(n<sup>2</sup>), Insertion Sort - O(n<sup>2</sup>), Quick Sort - O(n&nbsp;log&nbsp;n), Merge Sort - O(n&nbsp;log&nbsp;n), Selection Sort - O(n<sup>2</sup>).",
         "<b>Algorithms with <abbr title='Additional extra memory required by an algorithm apart from the input data structure.'>memory complexities</abbr>:</b><br> Linear Search - O(1), Binary Search - O(1);<br> Bubble Sort - O(1), Insertion Sort - O(1), Quick Sort - O(log&nbsp;n)-O(n), Merge Sort - O(n), Selection Sort - O(1).",
