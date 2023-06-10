@@ -253,7 +253,7 @@
 
         "<b>Transaction isolation levels:</b> Read uncommitted, Read committed (default in PG), Repeatable reads, Serializable.",
         "<b>LOCK TABLE</b> users IN M MODE, where M can be ACCESS SHARE, ROW SHARE, ROW EXCLUSIVE, SHARE UPDATE EXCLUSIVE, <b>SHARE</b>, SHARE ROW EXCLUSIVE, EXCLUSIVE, ACCESS EXCLUSIVE",
-        "JPA <b>PESSIMISTIC_READ, PESSIMISTIC_WRITE,</b> PESSIMISTIC_FORCE_INCREMENT => <b>SELECT</b> * FROM users WHERE id = 1 <b>FOR SHARE</b> (<b>UPDATE</b>, KEY SHARE, NO KEY UPDATE)",
+        "JPA @Lock(<b>PESSIMISTIC_READ, PESSIMISTIC_WRITE</b> or PESSIMISTIC_FORCE_INCREMENT) => <b>SELECT</b> * FROM users WHERE id = 1 <b>FOR SHARE</b> (<b>UPDATE</b>, KEY SHARE, NO KEY UPDATE)",
         "<b>JPA cache levels: </b> session/transactional/app cache map, external cache (Ehcache).",
         "<b>Caches: </b> client (headers), caching proxy (Squid), reverse proxy (Nginx), app cache (Map), 1st/2nd level caches, DB cache.",
         "<b>PostgreSQL Full Text Search.</b> Types: tsvector, tsquery. <abbr title='Default PG index is B-Tree.'>Indexes</abbr>: GIN, GiST.",
