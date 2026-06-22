@@ -1,2 +1,2 @@
 # java-interview
-Open https://raw.githack.com/apetrichkovich/java-interview/main/index.html
+Open https://rawcdn.githack.com/apetrichkovich/java-interview/refs/heads/main/java.html
